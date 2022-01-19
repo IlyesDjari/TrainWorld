@@ -3,6 +3,9 @@
     padding: 0;
     box-sizing: border-box;
     box-shadow: none;
+    overflow: hi;
+    text-decoration: none;
+    list-style: none;
 }
 
 p,
@@ -11,7 +14,8 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+li {
     color: white;
 }
 
@@ -19,4 +23,30 @@ body {
     background-color: rgb(73, 73, 73);
 }
 
-@media only screen and (max-height: 896px) {}
+@media only screen and (max-height: 897px) {
+
+    nav {
+        position: fixed;
+        bottom: 0;
+        height: 7.5vh;
+        width: 100vw;
+        background-color: rgb(218, 71, 255);
+    }
+
+    nav ul {
+        display: flex;
+    }
+
+    nav ul a {
+        width: 100vw;
+        display: flex;
+        justify-content: space-around;
+    }
+
+
+    nav ul a li {
+        display: flex;
+        height: 7.5vh;
+        align-items: center;
+    }
+}
