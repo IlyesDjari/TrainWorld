@@ -9,14 +9,17 @@ function showWelcomePopup() {
     popup.style.display = "block";
 
     const exitPopup = document.getElementById("welcomeClose");
-    exitPopup.addEventListener("click", () => popup.style.display = "none");
+    exitPopup.addEventListener("click", () => {
+        popup.style.display = "none";
+        checkOrientation();
+        setInterval(() => checkOrientation(), 1000);
+    });
 }
 
-setInterval(() => {
-    console.log("Working");
+function checkOrientation() {
     if (screen.availHeight > screen.availWidth) {
         document.getElementById('askLandscape').style.display = "flex";
     } else if (screen.availHeight < screen.availWidth) {
         document.getElementById('askLandscape').style.display = "none";
     }
-}, 1000);
+}
