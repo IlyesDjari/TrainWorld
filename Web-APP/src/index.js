@@ -10,3 +10,7 @@ setInterval(() => {
         document.getElementById('askLandscape').style.display = "none";
     }
 }, 1000);
+
+document.getElementById('planelement').addEventListener(click, () => {
+    console.log("clicked");
+})
