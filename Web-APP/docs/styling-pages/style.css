@@ -21,16 +21,21 @@ li {
 
 body {
     background-color: rgb(73, 73, 73);
+    min-height: 100vh;
+    width: 100vw;
 }
 
 @media only screen and (max-height: 897px) {
 
+    /* Navigation */
     nav {
         position: fixed;
         bottom: 0;
         height: 7.5vh;
         width: 100vw;
         background-color: rgb(218, 71, 255);
+
+        display: none;
     }
 
     nav ul {
@@ -49,6 +54,39 @@ body {
         align-items: center;
     }
 
+    /* Welcome popup */
+    #welcomePopup {
+        background-color: #ffffff;
+
+        width: 70%;
+        margin: auto;
+        padding: 5%;
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        display: none;
+    }
+
+    #welcomePopup p,
+    #welcomePopup h2 {
+        color: black;
+    }
+
+    #welcomePopup h2 {
+        margin-bottom: 1em;
+    }
+
+    #welcomeClose {
+        position: absolute;
+        right: 15px;
+        top: 10px;
+
+        font-size: 30px;
+    }
+
     #askLandscape {
         position: absolute;
         flex-direction: column;
@@ -59,6 +97,8 @@ body {
         background-color: rgb(43, 43, 43);
         height: 100vh;
         width: 100vw;
+
+        display: none;
     }
 
     .phone {
