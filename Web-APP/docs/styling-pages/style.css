@@ -90,6 +90,7 @@ body {
         background-color: rgb(43, 43, 43);
         border-radius: 10px;
         width: 80vw;
+        display: none;
     }
 
     #firstpopupquit {

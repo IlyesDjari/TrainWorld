@@ -13,8 +13,12 @@ setInterval(() => {
 
 document.getElementById('planelement').addEventListener("click", (e) => {
     e.preventDefault;
-
     document.getElementById('planelement').style.display = "none";
+    document.getElementById('houseplanpopup').style.display = "inherit";
+})
 
-    console.log("clicked");
+document.getElementById('firstpopupquit').addEventListener("click", (e) => {
+    e.preventDefault
+    document.getElementById('planelement').style.display = "inherit";
+    document.getElementById('houseplanpopup').style.display = "none";
 })
