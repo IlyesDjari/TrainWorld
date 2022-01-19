@@ -1,7 +1,5 @@
 "use strict"
 
-
-
 setInterval(() => {
     console.log("Working");
     if (screen.availHeight > screen.availWidth) {
