@@ -34,6 +34,8 @@ body {
         height: 7.5vh;
         width: 100vw;
         background-color: rgb(218, 71, 255);
+
+        display: none;
     }
 
     nav ul {
