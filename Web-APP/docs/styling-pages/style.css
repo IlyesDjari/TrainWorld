@@ -75,4 +75,12 @@ body {
     #welcomePopup h2 {
         margin-bottom: 1em;
     }
+
+    #welcomeClose {
+        position: absolute;
+        right: 15px;
+        top: 10px;
+
+        font-size: 30px;
+    }
 }
