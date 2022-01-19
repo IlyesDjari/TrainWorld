@@ -11,6 +11,10 @@ setInterval(() => {
     }
 }, 1000);
 
-document.getElementById('planelement').addEventListener(click, () => {
+document.getElementById('planelement').addEventListener("click", (e) => {
+    e.preventDefault;
+
+    document.getElementById('planelement').style.display = "none";
+
     console.log("clicked");
 })

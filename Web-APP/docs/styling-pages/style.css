@@ -3,7 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     box-shadow: none;
-    overflow: hi;
+    overflow-x: hidden;
     text-decoration: none;
     list-style: none;
 }
@@ -84,4 +84,35 @@ body {
         }
     }
 
+    #houseplanpopup {
+        margin: 10vh 10vw 10vh 10vw;
+        padding: 3%;
+        background-color: rgb(43, 43, 43);
+        border-radius: 10px;
+        width: 80vw;
+    }
+
+    #firstpopupquit {
+        margin-left: 73vw;
+    }
+
+    .firstpopup {
+        display: flex;
+        flex-direction: row;
+        gap: 5vw;
+        overflow-y: scroll;
+    }
+
+    .firstpopupimg {
+        display: flex;
+        align-self: center;
+        width: 300vw;
+    }
+
+    .firstpopuptext * {
+        margin-top: 5vh;
+        display: flex;
+        flex-direction: column;
+        gap: 5vh;
+    }
 }
