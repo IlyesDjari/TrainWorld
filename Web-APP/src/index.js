@@ -25,3 +25,15 @@ function checkOrientation() {
         document.getElementById('askLandscape').style.display = "none";
     }
 }
+
+document.getElementById('planelement').addEventListener("click", (e) => {
+    e.preventDefault;
+    document.getElementById('planelement').style.display = "none";
+    document.getElementById('houseplanpopup').style.display = "inherit";
+})
+
+document.getElementById('firstpopupquit').addEventListener("click", (e) => {
+    e.preventDefault
+    document.getElementById('planelement').style.display = "inherit";
+    document.getElementById('houseplanpopup').style.display = "none";
+})
