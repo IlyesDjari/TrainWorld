@@ -71,7 +71,7 @@ body {
         margin-bottom: 1em;
     }
 
-    #welcomeClose {
+    .closeBtn {
         position: absolute;
         right: 15px;
         top: 10px;
@@ -137,7 +137,7 @@ body {
         opacity: 0.5;
     }
 
-    #houseplanpopup {
+    #popupContainer {
         margin: 10vh 10vw 10vh 10vw;
         padding: 3%;
         background-color: rgba(43, 43, 43, 0.95);
@@ -151,24 +151,24 @@ body {
         left: 0;
     }
 
-    #firstpopupquit {
+    #popupQuit {
         margin-left: 73vw;
     }
 
-    .firstpopup {
-        display: flex;
+    .popupContent {
+        display: none;
         flex-direction: row;
         gap: 5vw;
         overflow-y: scroll;
     }
 
-    .firstpopupimg {
+    .popupImg {
         display: flex;
         align-self: center;
         width: 300vw;
     }
 
-    .firstpopuptext * {
+    .popupText * {
         margin-top: 5vh;
         display: flex;
         flex-direction: column;
