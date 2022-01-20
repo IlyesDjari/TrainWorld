@@ -17,7 +17,6 @@ h5,
 h6,
 li {
     color: white;
-    font-family: quiche-sans, sans-serif;
 }
 
 h1,
@@ -26,11 +25,13 @@ h3,
 h4,
 h5,
 h6 {
-    font-weight: 800;
+    font-family: futura-pt-bold, sans-serif;
+    font-weight: 700;
 }
 
 p,
 li {
+    font-family: futura-pt, sans-serif;
     font-weight: 400;
 }
 
