@@ -120,10 +120,21 @@ body {
 
     #groundPlan {
         display: none;
-
-        width: 100vw;
+        align-items: center;
+        object-fit: contain;
+        width: 70%;
+        height: 100vh;
         margin: auto;
         text-align: center;
+    }
+
+    #groundPlan svg image {
+        width: 100%;
+    }
+
+    rect {
+        background-color: red;
+        opacity: 0.5;
     }
 
     #houseplanpopup {
