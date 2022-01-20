@@ -42,33 +42,6 @@ body {
 
 @media only screen and (max-height: 897px) {
 
-    /* Navigation */
-    nav {
-        position: fixed;
-        bottom: 0;
-        height: 7.5vh;
-        width: 100vw;
-        background-color: rgb(218, 71, 255);
-
-        display: none;
-    }
-
-    nav ul {
-        display: flex;
-    }
-
-    nav ul a {
-        width: 100vw;
-        display: flex;
-        justify-content: space-around;
-    }
-
-    nav ul a li {
-        display: flex;
-        height: 7.5vh;
-        align-items: center;
-    }
-
     /* Welcome popup */
     #welcomePopup {
         background-color: #ffffff;
@@ -94,7 +67,11 @@ body {
         margin-bottom: 1em;
     }
 
-    #welcomeClose {
+    #welcomePopup p:first-of-type {
+        margin-bottom: 1em;
+    }
+
+    .closeBtn {
         position: absolute;
         right: 15px;
         top: 10px;
@@ -139,33 +116,54 @@ body {
         }
     }
 
-    #houseplanpopup {
-        margin: 10vh 10vw 10vh 10vw;
-        padding: 3%;
-        background-color: rgb(43, 43, 43);
-        border-radius: 10px;
-        width: 80vw;
+    /* Groundplan */
+
+    #groundPlan {
         display: none;
+        align-items: center;
+        object-fit: contain;
+        width: 70%;
+        height: 100vh;
+        margin: auto;
+        text-align: center;
     }
 
-    #firstpopupquit {
+    #groundPlan svg image {
+        width: 100%;
+    }
+
+    #popupContainer {
+        margin: 10vh 10vw 10vh 10vw;
+        padding: 3%;
+        background-color: rgba(43, 43, 43, 0.95);
+        border-radius: 10px;
+        width: 80vw;
+        height: 80vh;
+        display: none;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    #popupQuit {
         margin-left: 73vw;
     }
 
-    .firstpopup {
-        display: flex;
+    .popupContent {
+        display: none;
         flex-direction: row;
         gap: 5vw;
         overflow-y: scroll;
     }
 
-    .firstpopupimg {
+    .popupImg {
         display: flex;
         align-self: center;
         width: 300vw;
     }
 
-    .firstpopuptext * {
+    .popupText * {
         margin-top: 5vh;
         display: flex;
         flex-direction: column;

@@ -24,67 +24,89 @@
         <h2>Draai uw scherm aub</h2>
     </div>
 
-    <div class="houseplanbuttons">
-        <button id="planelement">
-            Click here to open element
-        </button>
+    <div id="groundPlan">
+        <svg id="groundPlanSvg" version="1.1" xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 64">
+            <image xlink:href="../images/home images/Floor plan.jpg">
+            </image>
+            <rect class="clickableObject" id="tableTarget" data-name="table" x="39" y="15" opacity="0" width="30"
+                height="10" />
+            <rect class="clickableObject" id="phoneTarget" data-name="phone" x="89" y="25" opacity="0" width="6"
+                height="9" />
+            <rect class="clickableObject" id="portraitTarget" data-name="portrait" x="46" y="3" opacity="0" width="22"
+                height="6" />
+            <rect class="clickableObject" id="mirrorTarget" data-name="mirror" x="3" y="27" opacity="0" width="8"
+                height="12" />
+            <rect class="clickableObject" id="televisionTarget" data-name="television" x="80" y="44" opacity="0"
+                width="14" height="13" />
+        </svg>
     </div>
 
-    <div id="houseplanpopup">
-        <button id="firstpopupquit">
-            X
-        </button>
-        <div class="firstpopup">
-            <img class="firstpopupimg" src="../images/home images/phoneexample.png" alt="">
-            <div class="firstpopuptext">
+    <div id="popupContainer">
+        <div id="popupClose" class="closeBtn"><i class="fas fa-times"></i></div>
+        <div id="phonePopup" class="popupContent">
+            <img class="popupImg" id="phoneImg " src="../images/home images/phoneexample.png" alt="Phone from the 50s">
+            <div class="popupText">
                 <h3>De telefoon van de Baanmeester</h3>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cumque, ducimus vero deleniti provident
-                    dolor sapiente, possimus officia eos natus voluptatum suscipit blanditiis odio voluptatibus, quos
-                    exercitationem ipsa totam! Itaque, accusamus! Lorem ipsum dolor sit amet consectetur adipisicing
-                    elit. Dicta omnis ad recusandae minus ipsa necessitatibus. Modi perferendis reprehenderit, itaque
-                    qui consequatur repellat dolor unde voluptatum quisquam et deleniti, alias numquam! Lorem ipsum
-                    dolor sit amet, consectetur adipisicing elit. Optio, nostrum id. Minima vitae non, voluptas et
-                    tempore modi similique cum, laudantium eius molestias soluta, quidem ratione distinctio. Atque,
-                    incidunt quibusdam! Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima quam quibusdam
-                    aut nihil. Qui error eos eveniet id incidunt sunt, molestiae impedit deserunt repellendus porro,
-                    ullam quis itaque molestias necessitatibus. Lorem ipsum dolor sit amet consectetur, adipisicing
-                    elit. Vero molestiae aliquid eveniet, dolores officia eligendi accusamus ipsa, maiores laborum
-                    voluptas nihil temporibus alias quibusdam? Voluptatem quisquam accusantium commodi eum laboriosam.
+                <p>Een baanmeester kreeg een bepaalde sector van het spoorwegnet toegewezen. Hij was verantwoordelijk
+                    voor het vlot verlopen van het spoorwegverkeer binnen deze sector, door ervoor te zorgen dat de
+                    sporen werden onderhouden en reparatiewerken werden uitgevoerd. De baanmeester had hiervoor enkele
+                    ploegen spoorleggers onder zich. Een belangrijke job dus!
                 </p>
+                <p>Rinkelt de telefoon? Neem dan snel op, en luister naar de opdracht voor de baanmeester!</p>
+            </div>
+        </div>
+        <div id="tablePopup" class="popupContent">
+            <img src="../images/home images/affiche.jpg" alt="Old picture from expo '58" class="popupImg" id="tableImg">
+            <div class="popupText">
+                <h3>Expo '58</h3>
+                <p>Op de tafel van het baanmeesterhuis vind je artikels terug van het jaar 1958. Een historisch
+                    jaar voor België, want toen werd in Brussel de Wereldtentoonstelling gehouden. Het thema van de
+                    tentoonstelling was "Balans van de wereld, voor een menselijkere wereld".
+                </p>
+                <p>
+                    De trein mocht zeker niet ontbreken op Expo 58. In een station met acht sporen staan een zestigtal
+                    van de allernieuwste spoorwegvoertuigen van over de hele wereld: dieselen elektrische locomotieven,
+                    dieselmotorwagens, elektrische motorrijtuigen, gewone rijtuigen, pakwagens en goederenwagens.
+                </p>
+            </div>
+        </div>
+        <div id="portraitPopup" class="popupContent">
+            <img src="" alt="" class="popupImg" id="portraitImg">
+            <div class="popupText">
+                <h3>De familie Telemans</h3>
+                <p>Oorspronkelijk was de familie Telemans afkomstig uit Limburg. Het is ook daar dat hun avonturen
+                    begonnen. Vader Telemans startte bij de NMBS als spoorwegarbeider in Genk en is van daaruit steeds
+                    hoger opgeklommen tot hij ploegbaas was in Hasselt. Na zijn promotie tot baanmeester in 1939 moest
+                    de volledige familie verhuizen naar Evere.
+                </p>
+                <p>
+                    Drie jaar later werd hij baanmeester in Schaarbeek en gingen ze in het spoorweghuisje wonen dat je
+                    hier nu ziet staan. In 1958 ging vader Telemans met pensioen en moest de familie het huisje
+                    verlaten. Ze hebben daarna nog in Zellik en Ukkel gewoond. Toen de kinderen de jaren daarop begonnen
+                    te trouwen en het huis te verlaten, besloten de ouders om terug te keren naar Limburg.
+                </p>
+            </div>
+        </div>
+        <div id="mirrorPopup" class="popupContent">
+            <img src="../images/home images/uniform.jpg" alt="uniform" class="popupImg" id="mirorImg">
+            <div class="popupText">
+                <h3>Het uniform van de baanmeester</h3>
+                <p>Doorheen de jaren veranderde het uniform van de baanmeester enkele keren.
+                    In het baanmeesterhuis kun je hier een aantal van bezichtigen.
+                </p>
+                <p>Kijk eens even in de spiegel. Daar zie je jezelf als een echte baanmeester!</p>
             </div>
         </div>
     </div>
 
     <div id="welcomePopup">
-        <div id="welcomeClose"><i class="fas fa-times"></i></div>
+        <div id="welcomeClose" class="closeBtn"><i class="fas fa-times"></i></div>
         <h2>Welkom in het baanmeesterhuis!</h2>
-        <p>Hier begeef je je in een authentiek huis van een baanmeester van het jaar 1958.</p>
-        <p>Aarzel niet om op de verschillende objecten te klikken om alles te beleven!</p>
+        <p>Hier begeef je je in een authentiek huis van een baanmeester van het jaar 1958.
+            Aarzel niet om op de verschillende objecten te klikken om alles te beleven!</p>
         <p>Opgelet, voor deze ervaring moet je telefoon in landschapsmodus staan.</p>
     </div>
-
-    <nav>
-        <ul>
-            <a href="www.youtube.be">
-                <li>Nav</li>
-            </a>
-
-            <a href="www.youtube.be">
-                <li>Nav</li>
-            </a>
-
-            <a href="www.youtube.be">
-                <li>Nav</li>
-            </a>
-
-            <a href="www.youtube.be">
-                <li>Nav</li>
-            </a>
-        </ul>
-    </nav>
-
-
-
 
 </body>
 <script src="../../src/index.js"></script>

@@ -3,16 +3,21 @@
 window.onload = function () {
     showWelcomePopup();
 
-    document.getElementById('planelement').addEventListener("click", (e) => {
-        e.preventDefault;
-        document.getElementById('planelement').style.display = "none";
-        document.getElementById('houseplanpopup').style.display = "inherit";
+    document.getElementById('popupClose').addEventListener("click", (e) => {
+        document.getElementById('popupContainer').style.display = "none";
+        const popupContents = document.getElementsByClassName('popupContent');
+        for (let content of popupContents) {
+            content.style.display = "none";
+        }
     })
 
-    document.getElementById('firstpopupquit').addEventListener("click", (e) => {
-        e.preventDefault
-        document.getElementById('planelement').style.display = "inherit";
-        document.getElementById('houseplanpopup').style.display = "none";
+    document.getElementById('groundPlanSvg').addEventListener("click", (e) => {
+        const clickedObject = e.target.closest('.clickableObject');
+        if (clickedObject) {
+            document.getElementById("popupContainer").style.display = 'inherit';
+            const objectName = clickedObject.getAttribute('data-name');
+            document.getElementById(`${objectName}Popup`).style.display = 'flex';
+        }
     })
 }
 
@@ -33,7 +38,7 @@ function checkOrientation() {
         document.getElementById('askLandscape').style.display = "flex";
         document.getElementById('groundPlan').style.display = "none";
     } else if (screen.availHeight < screen.availWidth) {
+        document.getElementById('groundPlan').style.display = "flex";
         document.getElementById('askLandscape').style.display = "none";
-        document.getElementById('groundPlan').style.display = "block";
     }
 }
