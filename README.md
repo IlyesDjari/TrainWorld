@@ -19,3 +19,6 @@ https://trainworld.be/
 
 * Simple box rotating 90 degrees 
 https://codepen.io/fabiowallner/pen/YOyJbJ
+
+* How To Create a Toggle Switch - W3Schools https://www.w3schools.com/howto/howto_css_switch.asp
+
