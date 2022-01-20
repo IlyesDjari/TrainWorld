@@ -9,6 +9,11 @@ window.onload = function () {
         for (let content of popupContents) {
             content.style.display = "none";
         }
+
+        const guidoVideo = document.getElementById("guidoVideo");
+        guidoVideo.pause();
+        guidoVideo.currentTime = 0;
+        guidoVideo.load();
     })
 
     document.getElementById('groundPlanSvg').addEventListener("click", (e) => {
@@ -17,6 +22,10 @@ window.onload = function () {
             document.getElementById("popupContainer").style.display = 'inherit';
             const objectName = clickedObject.getAttribute('data-name');
             document.getElementById(`${objectName}Popup`).style.display = 'flex';
+            if (objectName == "portrait") {
+                const guidoVideo = document.getElementById("guidoVideo");
+                guidoVideo.play();
+            }
         }
     })
 

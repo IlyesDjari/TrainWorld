@@ -260,10 +260,11 @@ body {
         overflow-y: scroll;
     }
 
-    .popupImg {
+    .popupImg,
+    #guidoVideo {
         display: flex;
         align-self: center;
-        width: 300vw;
+        width: 100vw;
     }
 
     .popupText * {
