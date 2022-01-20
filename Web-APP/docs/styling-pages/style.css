@@ -132,11 +132,6 @@ body {
         width: 100%;
     }
 
-    rect {
-        background-color: red;
-        opacity: 0.5;
-    }
-
     #popupContainer {
         margin: 10vh 10vw 10vh 10vw;
         padding: 3%;
