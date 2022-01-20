@@ -36,9 +36,9 @@ function showWelcomePopup() {
 function checkOrientation() {
     if (screen.availHeight > screen.availWidth) {
         document.getElementById('askLandscape').style.display = "flex";
-        document.getElementById('groundPlan').style.display = "none";
+        document.getElementById('homepage').style.display = "none";
     } else if (screen.availHeight < screen.availWidth) {
-        document.getElementById('groundPlan').style.display = "flex";
+        document.getElementById('homepage').style.display = "flex";
         document.getElementById('askLandscape').style.display = "none";
     }
 }
