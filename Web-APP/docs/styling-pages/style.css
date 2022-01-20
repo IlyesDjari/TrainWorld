@@ -42,33 +42,6 @@ body {
 
 @media only screen and (max-height: 897px) {
 
-    /* Navigation */
-    nav {
-        position: fixed;
-        bottom: 0;
-        height: 7.5vh;
-        width: 100vw;
-        background-color: rgb(218, 71, 255);
-
-        display: none;
-    }
-
-    nav ul {
-        display: flex;
-    }
-
-    nav ul a {
-        width: 100vw;
-        display: flex;
-        justify-content: space-around;
-    }
-
-    nav ul a li {
-        display: flex;
-        height: 7.5vh;
-        align-items: center;
-    }
-
     /* Welcome popup */
     #welcomePopup {
         background-color: #ffffff;
@@ -137,6 +110,16 @@ body {
         100% {
             transform: rotate(-90deg)
         }
+    }
+
+    /* Groundplan */
+
+    #groundPlan {
+        display: none;
+
+        width: 100vw;
+        margin: auto;
+        text-align: center;
     }
 
     #houseplanpopup {
