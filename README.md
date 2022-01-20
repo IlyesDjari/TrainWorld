@@ -12,6 +12,17 @@ This repository contains the code for the different components of this project.
 
 https://trainworld.be/
 
+# Repository
+
+https://github.com/EHB-MCT/full-projects-3-team-undefined
+
+# Web app
+
+Branch: *Web app*
+HTML: index.html
+
+For now, working with the live server on VS code.
+
 
 # Sources
 
