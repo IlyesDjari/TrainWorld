@@ -19,6 +19,11 @@ window.onload = function () {
             document.getElementById(`${objectName}Popup`).style.display = 'flex';
         }
     })
+
+    document.getElementById('darkmodeSlider').addEventListener('change', () => {
+        document.body.classList.toggle("darkmode");
+        document.getElementById("popupContainer").classList.toggle("darkmodePopup");
+    })
 }
 
 function showWelcomePopup() {

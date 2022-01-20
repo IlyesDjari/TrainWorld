@@ -44,6 +44,22 @@ body {
     width: 100vw;
 }
 
+.darkmode {
+    background-color: rgb(43, 43, 43) !important;
+    color: white !important;
+}
+
+.darkmodePopup {
+    background-color: rgb(73, 73, 73) !important;
+    color: white !important;
+}
+
+
+
+.darkmode div div * {
+    color: white;
+}
+
 @media only screen and (max-height: 897px) {
 
     /* Welcome popup */
@@ -60,6 +76,8 @@ body {
         transform: translate(-50%, -50%);
 
         display: none;
+
+        border-radius: 10px;
     }
 
     #welcomePopup p,
@@ -219,7 +237,8 @@ body {
     #popupContainer {
         margin: 10vh 10vw 10vh 10vw;
         padding: 3%;
-        background-color: rgba(43, 43, 43, 0.95);
+        background-color: #f1eadd;
+        opacity: 0.95;
         border-radius: 10px;
         width: 80vw;
         height: 80vh;
@@ -227,7 +246,7 @@ body {
 
         position: absolute;
         top: 0;
-        left: 0;
+        left: 5%;
     }
 
     #popupQuit {
