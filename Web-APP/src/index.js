@@ -2,6 +2,19 @@
 
 window.onload = function () {
     showWelcomePopup();
+
+    document.getElementById('planelement').addEventListener("click", (e) => {
+        e.preventDefault;
+        document.getElementById('planelement').style.display = "none";
+        document.getElementById('houseplanpopup').style.display = "inherit";
+    })
+
+    document.getElementById('firstpopupquit').addEventListener("click", (e) => {
+        e.preventDefault
+        document.getElementById('planelement').style.display = "inherit";
+        document.getElementById('houseplanpopup').style.display = "none";
+    })
+
 }
 
 function showWelcomePopup() {
@@ -19,21 +32,9 @@ function showWelcomePopup() {
 function checkOrientation() {
     if (screen.availHeight > screen.availWidth) {
         document.getElementById('askLandscape').style.display = "flex";
-        document.getElementsByTagName('nav')[0].style.display = "none";
+        document.getElementById('groundPlan').style.display = "none";
     } else if (screen.availHeight < screen.availWidth) {
-        document.getElementsByTagName('nav')[0].style.display = "block";
+        document.getElementById('groundPlan').style.display = "block";
         document.getElementById('askLandscape').style.display = "none";
     }
 }
-
-document.getElementById('planelement').addEventListener("click", (e) => {
-    e.preventDefault;
-    document.getElementById('planelement').style.display = "none";
-    document.getElementById('houseplanpopup').style.display = "inherit";
-})
-
-document.getElementById('firstpopupquit').addEventListener("click", (e) => {
-    e.preventDefault
-    document.getElementById('planelement').style.display = "inherit";
-    document.getElementById('houseplanpopup').style.display = "none";
-})
