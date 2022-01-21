@@ -1,5 +1,9 @@
 "use strict"
 
+import "../node_modules/@fortawesome/fontawesome-free/js/brands.js";
+import "../node_modules/@fortawesome/fontawesome-free/js/solid.js";
+import "../node_modules/@fortawesome/fontawesome-free/js/fontawesome.js";
+
 window.onload = function () {
     showWelcomePopup();
 
