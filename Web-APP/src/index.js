@@ -36,6 +36,7 @@ window.onload = function () {
     document.getElementById('darkmodeSlider').addEventListener('change', () => {
         document.body.classList.toggle("darkmode");
         document.getElementById("popupContainer").classList.toggle("darkmodePopup");
+        document.getElementById("askLandscape").classList.toggle("darkmode");
     })
 }
 

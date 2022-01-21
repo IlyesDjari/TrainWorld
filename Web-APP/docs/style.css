@@ -49,11 +49,14 @@ body {
     color: white !important;
 }
 
+.darkmode h2 {
+    color: white !important;
+}
+
 .darkmodePopup {
     background-color: rgb(73, 73, 73) !important;
     color: white !important;
 }
-
 
 
 .darkmode div div * {
@@ -108,7 +111,7 @@ body {
         justify-content: center;
         align-items: center;
         z-index: 10;
-        background-color: rgb(43, 43, 43);
+        background-color: var(--background);
         height: 100vh;
         width: 100vw;
 
