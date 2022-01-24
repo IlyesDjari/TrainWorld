@@ -63,6 +63,8 @@ body {
     color: white;
 }
 
+
+
 @media only screen and (max-height: 897px) {
 
     /* Welcome popup */
@@ -107,7 +109,7 @@ body {
     #askLandscape {
         position: absolute;
         flex-direction: column;
-        display: none;
+        /* display: none; */
         justify-content: center;
         align-items: center;
         z-index: 10;
@@ -116,6 +118,18 @@ body {
         width: 100vw;
 
         display: none;
+    }
+
+    @media (orientation: portrait) {
+        #askLandscape {
+            display: flex;
+        }
+    }
+
+    @media (orientation: landscape) {
+        #askLandscape {
+            display: none;
+        }
     }
 
     .phone {
