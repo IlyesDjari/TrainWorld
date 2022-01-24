@@ -48,17 +48,5 @@ function showWelcomePopup() {
     exitPopup.addEventListener("click", () => {
         popup.style.display = "none";
         document.getElementById('homepage').style.display = "flex";
-        // checkOrientation();
-        // setInterval(() => checkOrientation(), 1000);
     });
 }
-
-// function checkOrientation() {
-//     if (screen.availHeight > screen.availWidth) {
-//         document.getElementById('askLandscape').style.display = "flex";
-//         document.getElementById('homepage').style.display = "none";
-//     } else if (screen.availHeight < screen.availWidth) {
-//         document.getElementById('homepage').style.display = "flex";
-//         document.getElementById('askLandscape').style.display = "none";
-//     }
-// }
