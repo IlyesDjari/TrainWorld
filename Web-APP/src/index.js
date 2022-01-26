@@ -4,7 +4,17 @@ import "../node_modules/@fortawesome/fontawesome-free/js/brands.js";
 import "../node_modules/@fortawesome/fontawesome-free/js/solid.js";
 import "../node_modules/@fortawesome/fontawesome-free/js/fontawesome.js";
 
+
+
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('../docs/sw.js')
+        .then((registration) => console.log('Service worker registered', registration))
+        .catch((error) => console.log('Service worker not registered', error));
+}
+
 window.onload = function () {
+
+
     showWelcomePopup();
 
     document.getElementById('popupClose').addEventListener("click", (e) => {
