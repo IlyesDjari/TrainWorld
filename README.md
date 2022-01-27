@@ -18,7 +18,7 @@ https://github.com/EHB-MCT/full-projects-3-team-undefined
 
 ## 1. Web app
 
-Branch: _Web app_
+**Branch: _Web app_**
 
 HTML: index.html
 
@@ -37,15 +37,11 @@ For now, working with the live server on VS code.
 
 ## 2. Firmware for interactive telephone
 
-Branch: _telephone-firmware_
+**Branch: _telephone-firmware_**
 
 ### Sources
 
-SPI Library - For communicating with one or more peripheral devices quickly over short distances https://www.arduino.cc/en/reference/SPI
-
-SdFat - Provides the acces to a SD card with our sound shield https://www.arduino.cc/reference/en/libraries/sdfat/
-
-VS1053_SdFat - Provides commands to command our VS1053 MP3 player https://www.arduino.cc/reference/en/libraries/vs1053-for-use-with-sdfat/
+SoftwareSerial Library (comes with Arduino IDE)
 
 ## 3. Colorization AI
 
@@ -83,6 +79,6 @@ Software: https://github.com/AliaksandrSiarohin/first-order-model
 
 ## 5. Vintage radio
 
-Branch: leds-radio
+**Branch: _leds-radio_**
 
 - Arduino Adafruit neopixel library: https://github.com/adafruit/Adafruit_NeoPixel this library is used to control a neopixel led strip inside the radio.
