@@ -4,9 +4,17 @@ import "../node_modules/@fortawesome/fontawesome-free/js/brands.js";
 import "../node_modules/@fortawesome/fontawesome-free/js/solid.js";
 import "../node_modules/@fortawesome/fontawesome-free/js/fontawesome.js";
 
+// code to register service worker
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('../docs/sw.js')
+        .then((registration) => console.log('Service worker registered', registration))
+        .catch((error) => console.log('Service worker not registered', error));
+}
+
 window.onload = function () {
     showWelcomePopup();
 
+    // removing the content from the popups when one is closed
     document.getElementById('popupClose').addEventListener("click", (e) => {
         document.getElementById('popupContainer').style.display = "none";
         const popupContents = document.getElementsByClassName('popupContent');
@@ -33,6 +41,7 @@ window.onload = function () {
         }
     })
 
+    // when the switch is toggled, classes are added or removed
     document.getElementById('darkmodeSlider').addEventListener('change', () => {
         document.body.classList.toggle("darkmode");
         document.getElementById("popupContainer").classList.toggle("darkmodePopup");
@@ -40,10 +49,12 @@ window.onload = function () {
     })
 }
 
+
 function showWelcomePopup() {
     const popup = document.getElementById("welcomePopup");
     popup.style.display = "block";
 
+    // when the cross is clicked, the popup disappears
     const exitPopup = document.getElementById("welcomeClose");
     exitPopup.addEventListener("click", () => {
         popup.style.display = "none";
