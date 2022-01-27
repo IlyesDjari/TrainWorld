@@ -25,10 +25,12 @@ window.onload = function () {
             closePopups();
         })
     }
+
     document.getElementById('overlay').addEventListener("click", e => {
         closePopups();
     })
 
+    //detect if a clickable element is clicked and open correct popup
     document.getElementById('groundPlanSvg').addEventListener("click", (e) => {
         const clickedObject = e.target.closest('.clickableObject');
         if (clickedObject) {
@@ -55,6 +57,30 @@ window.onload = function () {
         document.getElementById("popupContainer").classList.toggle("darkmodePopup");
         document.getElementById("askLandscape").classList.toggle("darkmode");
     })
+
+    // change language menu when language is clicked
+    const buttonFR = document.getElementById("buttonFR");
+    const buttonNL = document.getElementById("buttonNL");
+    const buttonEN = document.getElementById("buttonEN");
+
+
+    buttonNL.addEventListener('click', e => {
+        buttonNL.style.display = "none";
+        buttonFR.style.display = "block";
+        buttonEN.style.display = "block";
+    });
+
+    buttonFR.addEventListener('click', e => {
+        buttonFR.style.display = "none";
+        buttonNL.style.display = "block";
+        buttonEN.style.display = "block";
+    });
+    buttonEN.addEventListener('click', e => {
+        buttonEN.style.display = "none";
+        buttonFR.style.display = "block";
+        buttonNL.style.display = "block";
+    });
+
 }
 
 

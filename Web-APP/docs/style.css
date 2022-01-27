@@ -213,8 +213,8 @@ body {
         padding: 0.6em 0;
     }
 
-    #languages button:first-child {
-        border-bottom: black 1px solid;
+    #buttonNL {
+        display: none;
     }
 
     /* sidebalk switch */
