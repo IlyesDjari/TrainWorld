@@ -64,7 +64,6 @@ window.onload = function () {
     const buttonNL = document.getElementById("buttonNL");
     const buttonEN = document.getElementById("buttonEN");
 
-
     buttonNL.addEventListener('click', e => {
         buttonNL.style.display = "none";
         buttonFR.style.display = "block";
