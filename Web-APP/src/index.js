@@ -19,6 +19,12 @@ window.onload = function () {
         closePopups();
     })
 
+    let closeBtns = document.getElementsByClassName('popupBtn');
+    for (let btn of closeBtns) {
+        btn.addEventListener('click', e => {
+            closePopups();
+        })
+    }
     document.getElementById('overlay').addEventListener("click", e => {
         closePopups();
     })
