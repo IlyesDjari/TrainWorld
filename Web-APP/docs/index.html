@@ -25,9 +25,15 @@
         <div class="phone"></div>
         <h2>Draai uw scherm aub</h2>
     </div>
+    <div id="help"><i class="fas fa-question-circle"></i></div>
     <section id="homepage">
         <div id="sidebalk">
             <img src="./images/trainworld-logo.jpg" alt="Trainworld logo">
+            <div id="languages">
+                <button id="buttonNL">NL</button>
+                <button id="buttonEN">EN</button>
+                <button id="buttonFR">FR</button>
+            </div>
 
             <div id="darkmodeSwitch">
                 <p>Darkmode</p>
@@ -39,37 +45,40 @@
         </div>
         <div id="groundPlan">
             <svg id="groundPlanSvg" version="1.1" xmlns="http://www.w3.org/2000/svg"
-                xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 64">
+                xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 1 100 64">
                 <image xlink:href="./images/home_images/floor_plan.jpg">
                 </image>
                 <g transform="translate(54,20)">
-                    <circle class="pulse" id="tablePulse" cx="0" cy="0" r="7" fill="red" />
+                    <circle class="pulse" id="tablePulse" cx="0" cy="0" r="7" stroke="#fc4c00" />
                 </g>
                 <rect class="clickableObject" id="tableTarget" data-name="table" x="39" y="15" opacity="0" width="30"
                     height="10" />
                 <g transform="translate(92,29)">
-                    <circle class="pulse" id="phonePulse" cx="0" cy="0" r="7" fill="red" />
+                    <circle class="pulse" id="phonePulse" cx="0" cy="0" r="7" stroke="#fc4c00" />
                 </g>
                 <rect class="clickableObject" id="phoneTarget" data-name="phone" x="89" y="25" opacity="0" width="6"
                     height="9" />
                 <g transform="translate(57,6)">
-                    <circle class="pulse" id="portraitPulse" cx="0" cy="0" r="7" fill="red" />
+                    <circle class="pulse" id="portraitPulse" cx="0" cy="0" r="7" stroke="#fc4c00" />
                 </g>
                 <rect class="clickableObject" id="portraitTarget" data-name="portrait" x="46" y="3" opacity="0"
                     width="22" height="6" />
                 <g transform="translate(7,33)">
-                    <circle class="pulse" id="mirrorPulse" cx="0" cy="0" r="7" fill="red" />
+                    <circle class="pulse" id="mirrorPulse" cx="0" cy="0" r="7" stroke="#fc4c00" />
                 </g>
                 <rect class="clickableObject" id="mirrorTarget" data-name="mirror" x="3" y="27" opacity="0" width="8"
                     height="12" />
                 <g transform="translate(87,51)">
-                    <circle class="pulse" id="televisionPulse" cx="0" cy="0" r="7" fill="red" />
+                    <circle class="pulse" id="televisionPulse" cx="0" cy="0" r="7" stroke="#fc4c00" />
                 </g>
                 <rect class="clickableObject" id="televisionTarget" data-name="television" x="80" y="44" opacity="0"
                     width="14" height="13" />
             </svg>
         </div>
     </section>
+
+    <div id="overlay">
+    </div>
 
     <div id="popupContainer">
         <div id="popupClose" class="closeBtn"><i class="fas fa-times"></i></div>
@@ -83,6 +92,7 @@
                     ploegen spoorleggers onder zich. Een belangrijke job dus!
                 </p>
                 <p>Rinkelt de telefoon? Neem dan snel op, en luister naar de opdracht voor de baanmeester!</p>
+                <button class="popupBtn">Terug naar de woonkamer</button>
             </div>
         </div>
         <div id="tablePopup" class="popupContent">
@@ -98,6 +108,7 @@
                     van de allernieuwste spoorwegvoertuigen van over de hele wereld: dieselen elektrische locomotieven,
                     dieselmotorwagens, elektrische motorrijtuigen, gewone rijtuigen, pakwagens en goederenwagens.
                 </p>
+                <button class="popupBtn">Terug naar de woonkamer</button>
             </div>
         </div>
         <div id="portraitPopup" class="popupContent">
@@ -115,6 +126,7 @@
                     verlaten. Ze hebben daarna nog in Zellik en Ukkel gewoond. Toen de kinderen de jaren daarop begonnen
                     te trouwen en het huis te verlaten, besloten de ouders om terug te keren naar Limburg.
                 </p>
+                <button class="popupBtn">Terug naar de woonkamer</button>
             </div>
         </div>
         <div id="mirrorPopup" class="popupContent">
@@ -125,6 +137,7 @@
                     In het baanmeesterhuis kun je hier een aantal van bezichtigen.
                 </p>
                 <p>Kijk eens even in de spiegel. Daar zie je jezelf als een echte baanmeester!</p>
+                <button class="popupBtn">Terug naar de woonkamer</button>
             </div>
         </div>
     </div>
@@ -134,7 +147,7 @@
         <h2>Welkom in het baanmeesterhuis!</h2>
         <p>Hier begeef je je in een authentiek huis van een baanmeester van het jaar 1958.
             Aarzel niet om op de verschillende objecten te klikken om alles te beleven!</p>
-        <p>Opgelet, voor deze ervaring moet je telefoon in landschapsmodus staan.</p>
+        <button id="welcomeBtn" class="popupBtn">Begin je bezoek!</button>
     </div>
 
 </body>
