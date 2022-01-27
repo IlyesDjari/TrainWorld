@@ -7,6 +7,9 @@
     text-decoration: none;
     list-style: none;
 
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+
     --text-color: #000;
     --background: #eadec7;
 }
@@ -158,6 +161,8 @@ body {
     /* homepage */
     #homepage {
         display: none;
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
     }
 
     /* sidebalk */
@@ -245,6 +250,9 @@ body {
         height: 100vh;
         margin: auto;
         text-align: center;
+
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
     }
 
     #groundPlan svg image {
@@ -309,6 +317,8 @@ body {
         animation-duration: 3s;
         animation-name: pulse;
         animation-iteration-count: infinite;
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
     }
 
     @keyframes pulse {
