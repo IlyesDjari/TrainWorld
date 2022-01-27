@@ -80,3 +80,9 @@ For viewing the project in the project folder. Download the Spark AR software an
 ## 4. Deepfakes met First Order Model
 
 Software: https://github.com/AliaksandrSiarohin/first-order-model
+
+## 5. Vintage radio
+
+Branch: leds-radio
+
+- Arduino Adafruit neopixel library: https://github.com/adafruit/Adafruit_NeoPixel this library is used to control a neopixel led strip inside the radio.
