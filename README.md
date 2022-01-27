@@ -74,3 +74,7 @@ Software: https://sparkar.facebook.com/ar-studio/download/
 Project folder: https://ehb-my.sharepoint.com/:f:/g/personal/finn_janssens_student_ehb_be/EmR3xovaRGNDtluZzKMWXKkBF0mmk314cssssvbp6fx60Q?e=1Ar3LL
 
 For viewing the project in the project folder. Download the Spark AR software and open the .arproj file.
+
+## 4. Deepfakes met First Order Model
+
+Software: https://github.com/AliaksandrSiarohin/first-order-model
