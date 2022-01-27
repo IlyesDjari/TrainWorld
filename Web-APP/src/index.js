@@ -16,31 +16,30 @@ window.onload = function () {
 
     // removing the content from the popups when one is closed
     document.getElementById('popupClose').addEventListener("click", (e) => {
-        document.getElementById('popupContainer').style.display = "none";
-        const popupContents = document.getElementsByClassName('popupContent');
-        for (let content of popupContents) {
-            content.style.display = "none";
-        }
+        closePopups();
+    })
 
-        const guidoVideo = document.getElementById("guidoVideo");
-        guidoVideo.pause();
-        guidoVideo.currentTime = 0;
-        guidoVideo.load();
+    document.getElementById('overlay').addEventListener("click", e => {
+        closePopups();
     })
 
     document.getElementById('groundPlanSvg').addEventListener("click", (e) => {
         const clickedObject = e.target.closest('.clickableObject');
         if (clickedObject) {
             document.getElementById("popupContainer").style.display = 'inherit';
+            document.getElementById("overlay").style.display = 'inherit';
             const objectName = clickedObject.getAttribute('data-name');
             document.getElementById(`${objectName}Popup`).style.display = 'flex';
+
             if (objectName == "portrait") {
                 const guidoVideo = document.getElementById("guidoVideo");
                 guidoVideo.play();
             }
 
             let pulseElement = document.getElementById(`${objectName}Pulse`);
-            pulseElement.parentNode.removeChild(pulseElement);
+            if (pulseElement) {
+                pulseElement.parentNode.removeChild(pulseElement);
+            }
         }
     })
 
@@ -72,4 +71,19 @@ function closeWelcomePopup() {
     const popup = document.getElementById("welcomePopup");
     popup.style.display = "none";
     document.getElementById('homepage').style.display = "flex";
+}
+
+function closePopups() {
+    document.getElementById('popupContainer').style.display = "none";
+    document.getElementById("overlay").style.display = 'none';
+
+    const popupContents = document.getElementsByClassName('popupContent');
+    for (let content of popupContents) {
+        content.style.display = "none";
+    }
+
+    const guidoVideo = document.getElementById("guidoVideo");
+    guidoVideo.pause();
+    guidoVideo.currentTime = 0;
+    guidoVideo.load();
 }
