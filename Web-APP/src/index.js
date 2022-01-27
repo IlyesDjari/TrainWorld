@@ -55,12 +55,21 @@ window.onload = function () {
 
 function showWelcomePopup() {
     const popup = document.getElementById("welcomePopup");
-    popup.style.display = "block";
+    popup.style.display = "flex";
 
     // when the cross is clicked, the popup disappears
     const exitPopup = document.getElementById("welcomeClose");
+    const welcomeBtn = document.getElementById("welcomeBtn");
     exitPopup.addEventListener("click", () => {
-        popup.style.display = "none";
-        document.getElementById('homepage').style.display = "flex";
+        closeWelcomePopup();
     });
+    welcomeBtn.addEventListener("click", () => {
+        closeWelcomePopup();
+    });
+}
+
+function closeWelcomePopup() {
+    const popup = document.getElementById("welcomePopup");
+    popup.style.display = "none";
+    document.getElementById('homepage').style.display = "flex";
 }
