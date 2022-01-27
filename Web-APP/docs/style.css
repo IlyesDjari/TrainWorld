@@ -198,6 +198,15 @@ body {
         width: 10%;
     }
 
+    #help {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        text-align: center;
+        font-size: 2em;
+        color: #fc4c00;
+    }
+
     /* language menu */
 
     #languages {
