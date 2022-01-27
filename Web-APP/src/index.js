@@ -38,6 +38,9 @@ window.onload = function () {
                 const guidoVideo = document.getElementById("guidoVideo");
                 guidoVideo.play();
             }
+
+            let pulseElement = document.getElementById(`${objectName}Pulse`);
+            pulseElement.parentNode.removeChild(pulseElement);
         }
     })
 
