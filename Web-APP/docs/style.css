@@ -199,6 +199,9 @@ body {
     #sidebalk #darkmodeSwitch {
         align-self: center;
         margin-bottom: 20px;
+        width: 90%;
+        font-size: 0.9em;
+        text-align: center;
     }
 
     #sidebalk .switch {
