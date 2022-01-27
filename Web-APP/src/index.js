@@ -56,6 +56,11 @@ window.onload = function () {
         document.body.classList.toggle("darkmode");
         document.getElementById("popupContainer").classList.toggle("darkmodePopup");
         document.getElementById("askLandscape").classList.toggle("darkmode");
+
+        let buttons = document.getElementsByClassName('popupBtn');
+        for (let button of buttons) {
+            button.classList.toggle("darkmode");
+        }
     })
 
     // change language menu when language is clicked
