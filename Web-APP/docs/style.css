@@ -119,9 +119,10 @@ body {
     }
 
     .popupBtn {
-        background-color: RGB(234, 222, 198);
-        padding: 1em 0.7em;
+        background-color: #fc4c00;
+        padding: 1em 1em;
         border-radius: 7px;
+        color: white;
     }
 
     #welcomeBtn {
@@ -346,11 +347,19 @@ body {
         overflow-y: scroll;
     }
 
-    .popupImg,
-    #guidoVideo {
+
+    .popupImg {
         display: flex;
         align-self: center;
-        width: 100vw;
+        width: 50%;
+    }
+
+    #guidoVideo {
+        width: 40%;
+    }
+
+    .popupText {
+        width: 50%;
     }
 
     .popupText * {
