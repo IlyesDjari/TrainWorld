@@ -46,7 +46,8 @@ window.onload = function () {
 
             let pulseElement = document.getElementById(`${objectName}Pulse`);
             if (pulseElement) {
-                pulseElement.parentNode.removeChild(pulseElement);
+                console.log(pulseElement);
+                pulseElement.setAttribute("stroke", "#eadec7")
             }
         }
     })

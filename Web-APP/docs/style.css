@@ -367,14 +367,12 @@ body {
     }
 
     circle {
-        stroke: var(--background);
         stroke-width: 2px;
         stroke-opacity: 1;
     }
 
     .pulse {
         fill-opacity: 0;
-        stroke: #fc4c00;
         animation-duration: 2s;
         animation-name: pulse;
         animation-iteration-count: infinite;
