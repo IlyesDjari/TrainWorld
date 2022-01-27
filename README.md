@@ -24,6 +24,8 @@ HTML: index.html
 
 For now, working with the live server on VS code.
 
+!! Not working on iphone/macbook !! Bug due to other implementation of flexbox on iOS.
+
 ### Sources
 
 - Checking if the users device is in portrait or landscape mode https://stackoverflow.com/questions/4917664/detect-viewport-orientation-if-orientation-is-portrait-display-alert-message-ad
