@@ -79,7 +79,8 @@ body {
 @media only screen and (max-height: 897px) {
 
     /* Welcome popup */
-    #welcomePopup {
+    #welcomePopup,
+    #helpPopup {
         background-color: #ffffff;
 
         width: 70%;
@@ -98,16 +99,25 @@ body {
     }
 
     #welcomePopup p,
-    #welcomePopup h2 {
+    #welcomePopup h2,
+    #helpPopup p,
+    #helpPopup h2 {
         color: black;
     }
 
-    #welcomePopup h2 {
+    #welcomePopup h2,
+    #helpPopup h2 {
         margin-bottom: 1em;
     }
 
-    #welcomePopup p:first-of-type {
+    #welcomePopup p:first-of-type,
+    #helpPopup p:first-of-type {
         margin-bottom: 1em;
+    }
+
+    #helpPopup {
+        display: none;
+        z-index: 5;
     }
 
     .closeBtn {
@@ -198,7 +208,7 @@ body {
         width: 10%;
     }
 
-    #help {
+    #helpBtn {
         position: absolute;
         right: 15px;
         top: 15px;
@@ -317,7 +327,7 @@ body {
         width: 100%;
     }
 
-    #overlay {
+    .overlay {
         width: 100vw;
         height: 100vh;
         background-color: rgba(51, 51, 51, 0.8);

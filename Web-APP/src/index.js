@@ -14,6 +14,20 @@ if ('serviceWorker' in navigator) {
 window.onload = function () {
     showWelcomePopup();
 
+    // functions for the help modal
+    document.getElementById("helpBtn").addEventListener('click', e => {
+        document.getElementById("helpOverlay").style.display = 'inherit';
+        document.getElementById("helpPopup").style.display = 'flex';
+    })
+
+    document.getElementById("helpClose").addEventListener('click', e => {
+        closeHelpPopup();
+    })
+
+    document.getElementById('helpOverlay').addEventListener('click', e => {
+        closeHelpPopup();
+    })
+
     // removing the content from the popups when one is closed
     document.getElementById('popupClose').addEventListener("click", (e) => {
         closePopups();
@@ -26,16 +40,18 @@ window.onload = function () {
         })
     }
 
-    document.getElementById('overlay').addEventListener("click", e => {
+    document.getElementById('popupOverlay').addEventListener("click", e => {
         closePopups();
     })
+
+
 
     //detect if a clickable element is clicked and open correct popup
     document.getElementById('groundPlanSvg').addEventListener("click", (e) => {
         const clickedObject = e.target.closest('.clickableObject');
         if (clickedObject) {
             document.getElementById("popupContainer").style.display = 'inherit';
-            document.getElementById("overlay").style.display = 'inherit';
+            document.getElementById("popupOverlay").style.display = 'inherit';
             const objectName = clickedObject.getAttribute('data-name');
             document.getElementById(`${objectName}Popup`).style.display = 'flex';
 
@@ -51,6 +67,7 @@ window.onload = function () {
             }
         }
     })
+
 
     // when the switch is toggled, classes are added or removed
     document.getElementById('darkmodeSlider').addEventListener('change', () => {
@@ -105,9 +122,15 @@ function closeWelcomePopup() {
     document.getElementById('homepage').style.display = "flex";
 }
 
+function closeHelpPopup() {
+    const popup = document.getElementById('helpPopup');
+    popup.style.display = "none";
+    document.getElementById('helpOverlay').style.display = 'none';
+}
+
 function closePopups() {
     document.getElementById('popupContainer').style.display = "none";
-    document.getElementById("overlay").style.display = 'none';
+    document.getElementById('popupOverlay').style.display = 'none';
 
     const popupContents = document.getElementsByClassName('popupContent');
     for (let content of popupContents) {
