@@ -74,6 +74,7 @@ window.onload = function () {
         document.body.classList.toggle("darkmode");
         document.getElementById("popupContainer").classList.toggle("darkmodePopup");
         document.getElementById("askLandscape").classList.toggle("darkmode");
+        document.getElementById('helpPopup').classList.toggle("darkmodePopup");
     })
 
     // change language menu when language is clicked
