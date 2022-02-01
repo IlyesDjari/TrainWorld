@@ -14,7 +14,8 @@
     --background: #eadec7;
 }
 
-button {
+button,
+a {
     border: none;
     background-color: transparent;
     font-family: inherit;
@@ -38,7 +39,8 @@ h3,
 h4,
 h5,
 h6,
-button {
+button,
+a {
     font-family: futura-pt-bold, sans-serif;
     font-weight: 700;
 }
@@ -132,11 +134,20 @@ body {
         font-size: 30px;
     }
 
-    .popupBtn {
+    .popupBtn,
+    .popupLink {
         background-color: #fc4c00;
         padding: 1em 1em;
         border-radius: 7px;
         color: white;
+    }
+
+    a.popupLink {
+        font-size: 13.3px;
+        display: inline-block !important;
+        box-sizing: border-box;
+
+
     }
 
     #welcomeBtn {
@@ -349,7 +360,7 @@ body {
 
     #popupContainer {
         margin: 10vh 10vw;
-        padding: 3%;
+        padding: 3.5% 3%;
         background-color: #f1eadd;
         opacity: 0.95;
         border-radius: 10px;
@@ -366,6 +377,20 @@ body {
 
     #popupQuit {
         margin-left: 73vw;
+    }
+
+    .fade-in {
+        animation: fade-in 0.5s;
+    }
+
+    @keyframes fade-in {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
     }
 
     .popupContent {
@@ -397,7 +422,7 @@ body {
         width: 40%;
     }
 
-    .popupText * {
+    .popupText *:not(h2) {
         margin-top: 5vh;
         display: flex;
         flex-direction: column;

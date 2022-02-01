@@ -50,7 +50,8 @@ window.onload = function () {
     document.getElementById('groundPlanSvg').addEventListener("click", (e) => {
         const clickedObject = e.target.closest('.clickableObject');
         if (clickedObject) {
-            document.getElementById("popupContainer").style.display = 'inherit';
+            const popupContainer = document.getElementById("popupContainer")
+            popupContainer.style.display = 'inherit';
             document.getElementById("popupOverlay").style.display = 'inherit';
             const objectName = clickedObject.getAttribute('data-name');
             document.getElementById(`${objectName}Popup`).style.display = 'flex';
@@ -64,6 +65,8 @@ window.onload = function () {
             if (pulseElement) {
                 pulseElement.setAttribute("stroke", "#eadec7")
             }
+
+            popupContainer.classList.add('fade-in');
         }
     })
 
@@ -98,6 +101,7 @@ window.onload = function () {
         buttonEN.style["border-bottom"] = "none";
         buttonEN.style["padding-bottom"] = "3px";
     });
+
     buttonEN.addEventListener('click', e => {
         buttonEN.style["border-bottom"] = "3px solid #fc4c00";
         buttonEN.style["padding-bottom"] = "0";
