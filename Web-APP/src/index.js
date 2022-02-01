@@ -82,20 +82,29 @@ window.onload = function () {
     const buttonEN = document.getElementById("buttonEN");
 
     buttonNL.addEventListener('click', e => {
-        buttonNL.style.display = "none";
-        buttonFR.style.display = "block";
-        buttonEN.style.display = "block";
+        buttonNL.style["border-bottom"] = "3px solid #fc4c00";
+        buttonNL.style["padding-bottom"] = "0";
+        buttonFR.style["border-bottom"] = "none";
+        buttonFR.style["padding-bottom"] = "3px";
+        buttonEN.style["border-bottom"] = "none";
+        buttonEN.style["padding-bottom"] = "3px";
     });
 
     buttonFR.addEventListener('click', e => {
-        buttonFR.style.display = "none";
-        buttonNL.style.display = "block";
-        buttonEN.style.display = "block";
+        buttonFR.style["border-bottom"] = "3px solid #fc4c00";
+        buttonFR.style["padding-bottom"] = "0";
+        buttonNL.style["border-bottom"] = "none";
+        buttonNL.style["padding-bottom"] = "3px";
+        buttonEN.style["border-bottom"] = "none";
+        buttonEN.style["padding-bottom"] = "3px";
     });
     buttonEN.addEventListener('click', e => {
-        buttonEN.style.display = "none";
-        buttonFR.style.display = "block";
-        buttonNL.style.display = "block";
+        buttonEN.style["border-bottom"] = "3px solid #fc4c00";
+        buttonEN.style["padding-bottom"] = "0";
+        buttonFR.style["border-bottom"] = "none";
+        buttonFR.style["padding-bottom"] = "3px";
+        buttonNL.style["border-bottom"] = "none";
+        buttonNL.style["padding-bottom"] = "3px";
     });
 
 }
