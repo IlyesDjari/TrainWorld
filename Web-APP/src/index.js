@@ -150,7 +150,17 @@ window.onload = function () {
         <h2>${dataLanguage.popup_title}</h2>
         <p>${dataLanguage.popup_text}</p>
         <button id="welcomeBtn" class="popupBtn">${dataLanguage.popup_button}</button>
-        `
+        `;
+
+        // change help popup language
+        let helpPopup = document.getElementById('helpPopup');
+        console.log(dataLanguage.help_text1);
+        helpPopup.innerHTML = `
+        <div id="helpClose" class="closeBtn"><i class="fas fa-times"></i></div>
+        <h2>${dataLanguage.help_title}</h2>
+        <p>${dataLanguage.help_text1}</p>
+        <p>${dataLanguage.help_text2}</p>`;
+
         //Extra changes
         document.getElementById('turnScreen').innerHTML = dataLanguage.main_turnScreen;
         //document.getElementById('darkmodeLabel').innerHTML = dataLanguage.main_darkmodeButton;
@@ -178,6 +188,10 @@ window.onload = function () {
         welcomeBtn.addEventListener("click", () => {
             closeWelcomePopup();
         });
+
+        document.getElementById("helpClose").addEventListener('click', e => {
+            closeHelpPopup();
+        })
     }
 
     buttonNL.addEventListener('click', e => {
