@@ -138,7 +138,7 @@ window.onload = function () {
                 <h2>${dataLanguage.mirror_title}</h2>
                 <p>${dataLanguage.mirror_text}
                 </p>
-                <a class="popupLink" href="https://www.instagram.com/ar/488083272825153/">Zet zelf een hoedje op!</a>
+                <a class="popupLink" href="https://www.instagram.com/ar/488083272825153/">${dataLanguage.mirror_link}</a>
                 <button class="popupBtn">${dataLanguage.backLiving_text}</button>
             </div>
         </div>
