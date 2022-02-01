@@ -129,6 +129,11 @@ function closeHelpPopup() {
 }
 
 function closePopups() {
+    const popupTexts = document.getElementsByClassName('popupText');
+    for (let text of popupTexts) {
+        text.scrollTop = 0;
+    }
+
     document.getElementById('popupContainer').style.display = "none";
     document.getElementById('popupOverlay').style.display = 'none';
 
