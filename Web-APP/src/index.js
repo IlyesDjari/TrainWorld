@@ -12,7 +12,9 @@ if ('serviceWorker' in navigator) {
 }
 
 window.onload = function () {
+    getLanguage('nl');
     showWelcomePopup();
+    initCloseButtons();
 
     // functions for the help modal
     document.getElementById("helpBtn").addEventListener('click', e => {
@@ -84,7 +86,102 @@ window.onload = function () {
     const buttonNL = document.getElementById("buttonNL");
     const buttonEN = document.getElementById("buttonEN");
 
+    async function getLanguage(dataLanguage) {
+        fetch(`languages/${dataLanguage}.json`)
+            .then(response => response.json())
+            .then(data => fillWithLanguage(data));
+    }
+
+    function fillWithLanguage(dataLanguage) {
+        //change popup mainpage language
+        let containerRoom = document.getElementById('popupContainer');
+        containerRoom.innerHTML = `
+        <div id="popupClose" class="closeBtn"><i class="fas fa-times"></i></div>
+        <div id="phonePopup" class="popupContent">
+            <div class="popupImgContainer">
+                <img class="popupImg" id="phoneImg " src="./images/home_images/phoneexample.png"
+                    alt="Phone from the 50s">
+            </div>
+            <div class="popupText">
+                <h2>${dataLanguage.phone_title}</h2>
+                <p>${dataLanguage.phone_text}</p>
+                <button class="popupBtn">${dataLanguage.backLiving_text}</button>
+            </div>
+        </div>
+        <div id="tablePopup" class="popupContent">
+            <div class="popupImgContainer">
+                <img src="./images/home_images/affiche.jpg" alt="Old picture from expo '58" class="popupImg"
+                    id="tableImg">
+            </div>
+            <div class="popupText">
+                <h2>${dataLanguage.table_title}</h2>
+                <p>${dataLanguage.table_text}
+                </p>
+                <button class="popupBtn">${dataLanguage.backLiving_text}</button>
+            </div>
+        </div>
+        <div id="portraitPopup" class="popupContent">
+            <div class="popupImgContainer">
+                <video id="guidoVideo" src="./videos/Guido.mp4"></video>
+            </div>
+            <div class="popupText">
+                <h2>${dataLanguage.portrait_title}</h2>
+                <p>${dataLanguage.portrait_text}
+                </p>
+                <button class="popupBtn">${dataLanguage.backLiving_text}</button>
+            </div>
+        </div>
+        <div id="mirrorPopup" class="popupContent">
+            <div class="popupImgContainer"><img src="./images/home_images/uniform.jpg" alt="uniform" class="popupImg"
+                    id="mirorImg"></div>
+            <div class="popupText">
+                <h2>${dataLanguage.mirror_title}</h2>
+                <p>${dataLanguage.mirror_text}
+                </p>
+                <a class="popupLink" href="https://www.instagram.com/ar/488083272825153/">Zet zelf een hoedje op!</a>
+                <button class="popupBtn">${dataLanguage.backLiving_text}</button>
+            </div>
+        </div>
+        `
+        //change intro popup language
+        let containerPopup = document.getElementById('welcomePopup');
+        containerPopup.innerHTML = `
+        <div id="welcomeClose" class="closeBtn"><i class="fas fa-times"></i></div>
+        <h2>${dataLanguage.popup_title}</h2>
+        <p>${dataLanguage.popup_text}</p>
+        <button id="welcomeBtn" class="popupBtn">${dataLanguage.popup_button}</button>
+        `
+        //Extra changes
+        document.getElementById('turnScreen').innerHTML = dataLanguage.main_turnScreen;
+        //document.getElementById('darkmodeLabel').innerHTML = dataLanguage.main_darkmodeButton;
+        initCloseButtons();
+    }
+
+    function initCloseButtons() {
+        // removing the content from the popups when one is closed
+        document.getElementById('popupClose').addEventListener("click", (e) => {
+            closePopups();
+        })
+
+        let closeBtns = document.getElementsByClassName('popupBtn');
+        for (let btn of closeBtns) {
+            btn.addEventListener('click', e => {
+                closePopups();
+            })
+        }
+        //intro popup buttons  
+        const exitPopup = document.getElementById("welcomeClose");
+        const welcomeBtn = document.getElementById("welcomeBtn");
+        exitPopup.addEventListener("click", () => {
+            closeWelcomePopup();
+        });
+        welcomeBtn.addEventListener("click", () => {
+            closeWelcomePopup();
+        });
+    }
+
     buttonNL.addEventListener('click', e => {
+        getLanguage('nl');
         buttonNL.style["border-bottom"] = "3px solid #fc4c00";
         buttonNL.style["padding-bottom"] = "0";
         buttonFR.style["border-bottom"] = "none";
@@ -94,6 +191,7 @@ window.onload = function () {
     });
 
     buttonFR.addEventListener('click', e => {
+        getLanguage('fr');
         buttonFR.style["border-bottom"] = "3px solid #fc4c00";
         buttonFR.style["padding-bottom"] = "0";
         buttonNL.style["border-bottom"] = "none";
@@ -103,6 +201,7 @@ window.onload = function () {
     });
 
     buttonEN.addEventListener('click', e => {
+        getLanguage('en');
         buttonEN.style["border-bottom"] = "3px solid #fc4c00";
         buttonEN.style["padding-bottom"] = "0";
         buttonFR.style["border-bottom"] = "none";
