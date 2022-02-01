@@ -14,7 +14,8 @@
     --background: #eadec7;
 }
 
-button {
+button,
+a {
     border: none;
     background-color: transparent;
     font-family: inherit;
@@ -38,7 +39,8 @@ h3,
 h4,
 h5,
 h6,
-button {
+button,
+a {
     font-family: futura-pt-bold, sans-serif;
     font-weight: 700;
 }
@@ -126,17 +128,26 @@ body {
 
     .closeBtn {
         position: absolute;
-        right: 15px;
+        right: 3%;
         top: 10px;
 
         font-size: 30px;
     }
 
-    .popupBtn {
+    .popupBtn,
+    .popupLink {
         background-color: #fc4c00;
         padding: 1em 1em;
         border-radius: 7px;
         color: white;
+    }
+
+    a.popupLink {
+        font-size: 13.3px;
+        display: inline-block !important;
+        box-sizing: border-box;
+
+
     }
 
     #welcomeBtn {
@@ -237,11 +248,16 @@ body {
 
         text-align: center;
 
-        padding: 0.6em 0;
+        margin: 0.6em 0;
     }
 
     #buttonNL {
-        display: none;
+        border-bottom: 3px solid #fc4c00;
+    }
+
+    #buttonEN,
+    #buttonFR {
+        padding-bottom: 3px;
     }
 
     /* sidebalk switch */
@@ -344,7 +360,7 @@ body {
 
     #popupContainer {
         margin: 10vh 10vw;
-        padding: 3%;
+        padding: 3.5% 3%;
         background-color: #f1eadd;
         opacity: 0.95;
         border-radius: 10px;
@@ -363,29 +379,50 @@ body {
         margin-left: 73vw;
     }
 
+    .fade-in {
+        animation: fade-in 0.5s;
+    }
+
+    @keyframes fade-in {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+
     .popupContent {
         display: none;
         flex-direction: row;
-        gap: 5vw;
+        gap: 3vw;
         overflow-y: scroll;
+        height: 100%;
     }
 
+    .popupImgContainer {
+        display: flex;
+        justify-content: center;
+        max-height: 100%;
+        width: 50%;
+    }
 
     .popupImg {
-        display: flex;
+        max-width: 100%;
+        max-height: 100%;
         align-self: center;
-        width: 50%;
     }
 
     #guidoVideo {
-        width: 40%;
-    }
-
-    .popupText {
         width: 50%;
     }
 
-    .popupText * {
+    .popupText {
+        width: 40%;
+    }
+
+    .popupText *:not(h2) {
         margin-top: 5vh;
         display: flex;
         flex-direction: column;

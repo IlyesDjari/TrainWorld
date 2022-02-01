@@ -50,7 +50,8 @@ window.onload = function () {
     document.getElementById('groundPlanSvg').addEventListener("click", (e) => {
         const clickedObject = e.target.closest('.clickableObject');
         if (clickedObject) {
-            document.getElementById("popupContainer").style.display = 'inherit';
+            const popupContainer = document.getElementById("popupContainer")
+            popupContainer.style.display = 'inherit';
             document.getElementById("popupOverlay").style.display = 'inherit';
             const objectName = clickedObject.getAttribute('data-name');
             document.getElementById(`${objectName}Popup`).style.display = 'flex';
@@ -62,9 +63,10 @@ window.onload = function () {
 
             let pulseElement = document.getElementById(`${objectName}Pulse`);
             if (pulseElement) {
-                console.log(pulseElement);
                 pulseElement.setAttribute("stroke", "#eadec7")
             }
+
+            popupContainer.classList.add('fade-in');
         }
     })
 
@@ -83,20 +85,30 @@ window.onload = function () {
     const buttonEN = document.getElementById("buttonEN");
 
     buttonNL.addEventListener('click', e => {
-        buttonNL.style.display = "none";
-        buttonFR.style.display = "block";
-        buttonEN.style.display = "block";
+        buttonNL.style["border-bottom"] = "3px solid #fc4c00";
+        buttonNL.style["padding-bottom"] = "0";
+        buttonFR.style["border-bottom"] = "none";
+        buttonFR.style["padding-bottom"] = "3px";
+        buttonEN.style["border-bottom"] = "none";
+        buttonEN.style["padding-bottom"] = "3px";
     });
 
     buttonFR.addEventListener('click', e => {
-        buttonFR.style.display = "none";
-        buttonNL.style.display = "block";
-        buttonEN.style.display = "block";
+        buttonFR.style["border-bottom"] = "3px solid #fc4c00";
+        buttonFR.style["padding-bottom"] = "0";
+        buttonNL.style["border-bottom"] = "none";
+        buttonNL.style["padding-bottom"] = "3px";
+        buttonEN.style["border-bottom"] = "none";
+        buttonEN.style["padding-bottom"] = "3px";
     });
+
     buttonEN.addEventListener('click', e => {
-        buttonEN.style.display = "none";
-        buttonFR.style.display = "block";
-        buttonNL.style.display = "block";
+        buttonEN.style["border-bottom"] = "3px solid #fc4c00";
+        buttonEN.style["padding-bottom"] = "0";
+        buttonFR.style["border-bottom"] = "none";
+        buttonFR.style["padding-bottom"] = "3px";
+        buttonNL.style["border-bottom"] = "none";
+        buttonNL.style["padding-bottom"] = "3px";
     });
 
 }
@@ -130,6 +142,11 @@ function closeHelpPopup() {
 }
 
 function closePopups() {
+    const popupTexts = document.getElementsByClassName('popupText');
+    for (let text of popupTexts) {
+        text.scrollTop = 0;
+    }
+
     document.getElementById('popupContainer').style.display = "none";
     document.getElementById('popupOverlay').style.display = 'none';
 
