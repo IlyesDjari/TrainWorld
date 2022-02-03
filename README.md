@@ -14,17 +14,22 @@ https://trainworld.be/
 
 ## Repository
 
-https://github.com/EHB-MCT/full-projects-3-team-undefined
+https://github.com/EHB-MCT/full-projects-3-team-undefined/
+
+## Web App
+
+https://spoorweghuisje.be/
 
 ## 1. Web app
 
-**Branch: _Web app_**
+**Folder: _Web-APP_**
 
 HTML: index.html
 
 For now, working with the live server on VS code.
 
-!! Not working on iphone/macbook !! Bug due to other implementation of flexbox on iOS.
+It is now also possible to use our website as a progressive web app. On chrome in android,
+a banner shows up to add the app to home screen, in iOS you have to do it manually.
 
 ### Sources
 
@@ -37,7 +42,7 @@ For now, working with the live server on VS code.
 
 ## 2. Firmware for interactive telephone
 
-**Branch: _telephone-firmware_**
+**Folder: _Telephone_**
 
 ### Sources
 
@@ -64,25 +69,24 @@ Python modules:
 - argparse
 - Pillow _Repository states PIL but only works with Pillow_
 
+## 4. Filter with Spark AR
 
-## 4. Filter met Spark AR
-
-**Branch: _SparkAR_mirrorFilter_**
+**Folder: _SparkAR-Filter_**
 
 Software: https://sparkar.facebook.com/ar-studio/download/
 
-For viewing the project download the Spark AR software and open the .arproj file.
+For viewing the project download the Spark AR Studio software and open the .arproj file.
 
 You can test the filters out on mobile with these links:
 https://www.facebook.com/fbcameraeffects/tryit/488083272825153/
 https://www.instagram.com/ar/488083272825153/
 
-## 4. Deepfakes met First Order Model
+## 4. Deepfakes with First Order Model
 
-Software: https://github.com/AliaksandrSiarohin/first-order-model
+Repository: https://github.com/AliaksandrSiarohin/first-order-model
 
 ## 5. Vintage radio
 
-**Branch: _leds-radio_**
+**Folder: _Leds-radio_**
 
 - Arduino Adafruit neopixel library: https://github.com/adafruit/Adafruit_NeoPixel this library is used to control a neopixel led strip inside the radio.
