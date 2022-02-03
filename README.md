@@ -67,11 +67,15 @@ Python modules:
 
 ## 4. Filter met Spark AR
 
+**Branch: _SparkAR_mirrorFilter_**
+
 Software: https://sparkar.facebook.com/ar-studio/download/
 
-Project folder: https://ehb-my.sharepoint.com/:f:/g/personal/finn_janssens_student_ehb_be/EmR3xovaRGNDtluZzKMWXKkBF0mmk314cssssvbp6fx60Q?e=1Ar3LL
+For viewing the project download the Spark AR software and open the .arproj file.
 
-For viewing the project in the project folder. Download the Spark AR software and open the .arproj file.
+You can test the filters out on mobile with these links:
+https://www.facebook.com/fbcameraeffects/tryit/488083272825153/
+https://www.instagram.com/ar/488083272825153/
 
 ## 4. Deepfakes met First Order Model
 
