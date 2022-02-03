@@ -1,85 +1,88 @@
-"use strict"
+"use strict";
 
 import "../node_modules/@fortawesome/fontawesome-free/js/brands.js";
 import "../node_modules/@fortawesome/fontawesome-free/js/solid.js";
 import "../node_modules/@fortawesome/fontawesome-free/js/fontawesome.js";
 
 // code to register service worker
-if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('../docs/sw.js')
-        .then((registration) => console.log('Service worker registered', registration))
-        .catch((error) => console.log('Service worker not registered', error));
+if ("serviceWorker" in navigator) {
+    navigator.serviceWorker
+        .register("./sw.js")
+        .then((registration) =>
+            console.log("Service worker registered", registration)
+        )
+        .catch((error) => console.log("Service worker not registered", error));
 }
 
 window.onload = function () {
-    getLanguage('nl');
+    getLanguage("nl");
     showWelcomePopup();
     initCloseButtons();
 
     // functions for the help modal
-    document.getElementById("helpBtn").addEventListener('click', e => {
-        document.getElementById("helpOverlay").style.display = 'inherit';
-        document.getElementById("helpPopup").style.display = 'flex';
-    })
+    document.getElementById("helpBtn").addEventListener("click", (e) => {
+        document.getElementById("helpOverlay").style.display = "inherit";
+        document.getElementById("helpPopup").style.display = "flex";
+    });
 
-    document.getElementById("helpClose").addEventListener('click', e => {
+    document.getElementById("helpClose").addEventListener("click", (e) => {
         closeHelpPopup();
-    })
+    });
 
-    document.getElementById('helpOverlay').addEventListener('click', e => {
+    document.getElementById("helpOverlay").addEventListener("click", (e) => {
         closeHelpPopup();
-    })
+    });
 
     // removing the content from the popups when one is closed
-    document.getElementById('popupClose').addEventListener("click", (e) => {
+    document.getElementById("popupClose").addEventListener("click", (e) => {
         closePopups();
-    })
+    });
 
-    let closeBtns = document.getElementsByClassName('popupBtn');
+    let closeBtns = document.getElementsByClassName("popupBtn");
     for (let btn of closeBtns) {
-        btn.addEventListener('click', e => {
+        btn.addEventListener("click", (e) => {
             closePopups();
-        })
+        });
     }
 
-    document.getElementById('popupOverlay').addEventListener("click", e => {
+    document.getElementById("popupOverlay").addEventListener("click", (e) => {
         closePopups();
-    })
-
-
+    });
 
     //detect if a clickable element is clicked and open correct popup
-    document.getElementById('groundPlanSvg').addEventListener("click", (e) => {
-        const clickedObject = e.target.closest('.clickableObject');
+    document.getElementById("groundPlanSvg").addEventListener("click", (e) => {
+        const clickedObject = e.target.closest(".clickableObject");
         if (clickedObject) {
-            const popupContainer = document.getElementById("popupContainer")
-            popupContainer.style.display = 'inherit';
-            document.getElementById("popupOverlay").style.display = 'inherit';
-            const objectName = clickedObject.getAttribute('data-name');
-            document.getElementById(`${objectName}Popup`).style.display = 'flex';
+            const popupContainer = document.getElementById("popupContainer");
+            popupContainer.style.display = "inherit";
+            document.getElementById("popupOverlay").style.display = "inherit";
+            const objectName = clickedObject.getAttribute("data-name");
+            document.getElementById(`${objectName}Popup`).style.display = "flex";
 
             if (objectName == "portrait") {
                 const guidoVideo = document.getElementById("guidoVideo");
+                guidoVideo.setAttribute("playsinline", true);
                 guidoVideo.play();
             }
 
             let pulseElement = document.getElementById(`${objectName}Pulse`);
             if (pulseElement) {
-                pulseElement.setAttribute("stroke", "#eadec7")
+                pulseElement.setAttribute("stroke", "#eadec7");
             }
-
-            popupContainer.classList.add('fade-in');
+            popupContainer.removeEventListener("animationend", removeContent, true);
+            popupContainer.classList.remove("fade-out");
+            popupContainer.classList.add("fade-in");
         }
-    })
-
+    });
 
     // when the switch is toggled, classes are added or removed
-    document.getElementById('darkmodeSlider').addEventListener('change', () => {
+    document.getElementById("darkmodeSlider").addEventListener("change", () => {
         document.body.classList.toggle("darkmode");
         document.getElementById("popupContainer").classList.toggle("darkmodePopup");
         document.getElementById("askLandscape").classList.toggle("darkmode");
-        document.getElementById('helpPopup').classList.toggle("darkmodePopup");
-    })
+        document.getElementById("helpPopup").classList.toggle("darkmodePopup");
+        document.getElementById("languages").classList.toggle("darkmode");
+    });
 
     // change language menu when language is clicked
     const buttonFR = document.getElementById("buttonFR");
@@ -88,13 +91,13 @@ window.onload = function () {
 
     async function getLanguage(dataLanguage) {
         fetch(`languages/${dataLanguage}.json`)
-            .then(response => response.json())
-            .then(data => fillWithLanguage(data));
+            .then((response) => response.json())
+            .then((data) => fillWithLanguage(data));
     }
 
     function fillWithLanguage(dataLanguage) {
         //change popup mainpage language
-        let containerRoom = document.getElementById('popupContainer');
+        let containerRoom = document.getElementById("popupContainer");
         containerRoom.innerHTML = `
         <div id="popupClose" class="closeBtn"><i class="fas fa-times"></i></div>
         <div id="phonePopup" class="popupContent">
@@ -122,7 +125,7 @@ window.onload = function () {
         </div>
         <div id="portraitPopup" class="popupContent">
             <div class="popupImgContainer">
-                <video id="guidoVideo" src="./videos/Guido.mp4"></video>
+                <video id="guidoVideo" src="./videos/Guido.mp4" playsinline></video>
             </div>
             <div class="popupText">
                 <h2>${dataLanguage.portrait_title}</h2>
@@ -142,9 +145,9 @@ window.onload = function () {
                 <button class="popupBtn">${dataLanguage.backLiving_text}</button>
             </div>
         </div>
-        `
+        `;
         //change intro popup language
-        let containerPopup = document.getElementById('welcomePopup');
+        let containerPopup = document.getElementById("welcomePopup");
         containerPopup.innerHTML = `
         <div id="welcomeClose" class="closeBtn"><i class="fas fa-times"></i></div>
         <h2>${dataLanguage.popup_title}</h2>
@@ -153,8 +156,7 @@ window.onload = function () {
         `;
 
         // change help popup language
-        let helpPopup = document.getElementById('helpPopup');
-        console.log(dataLanguage.help_text1);
+        let helpPopup = document.getElementById("helpPopup");
         helpPopup.innerHTML = `
         <div id="helpClose" class="closeBtn"><i class="fas fa-times"></i></div>
         <h2>${dataLanguage.help_title}</h2>
@@ -162,24 +164,25 @@ window.onload = function () {
         <p>${dataLanguage.help_text2}</p>`;
 
         //Extra changes
-        document.getElementById('turnScreen').innerHTML = dataLanguage.main_turnScreen;
+        document.getElementById("turnScreen").innerHTML =
+            dataLanguage.main_turnScreen;
         //document.getElementById('darkmodeLabel').innerHTML = dataLanguage.main_darkmodeButton;
         initCloseButtons();
     }
 
     function initCloseButtons() {
         // removing the content from the popups when one is closed
-        document.getElementById('popupClose').addEventListener("click", (e) => {
+        document.getElementById("popupClose").addEventListener("click", (e) => {
             closePopups();
-        })
+        });
 
-        let closeBtns = document.getElementsByClassName('popupBtn');
+        let closeBtns = document.getElementsByClassName("popupBtn");
         for (let btn of closeBtns) {
-            btn.addEventListener('click', e => {
+            btn.addEventListener("click", (e) => {
                 closePopups();
-            })
+            });
         }
-        //intro popup buttons  
+        //intro popup buttons
         const exitPopup = document.getElementById("welcomeClose");
         const welcomeBtn = document.getElementById("welcomeBtn");
         exitPopup.addEventListener("click", () => {
@@ -189,13 +192,13 @@ window.onload = function () {
             closeWelcomePopup();
         });
 
-        document.getElementById("helpClose").addEventListener('click', e => {
+        document.getElementById("helpClose").addEventListener("click", (e) => {
             closeHelpPopup();
-        })
+        });
     }
 
-    buttonNL.addEventListener('click', e => {
-        getLanguage('nl');
+    buttonNL.addEventListener("click", (e) => {
+        getLanguage("nl");
         buttonNL.style["border-bottom"] = "3px solid #fc4c00";
         buttonNL.style["padding-bottom"] = "0";
         buttonFR.style["border-bottom"] = "none";
@@ -204,8 +207,8 @@ window.onload = function () {
         buttonEN.style["padding-bottom"] = "3px";
     });
 
-    buttonFR.addEventListener('click', e => {
-        getLanguage('fr');
+    buttonFR.addEventListener("click", (e) => {
+        getLanguage("fr");
         buttonFR.style["border-bottom"] = "3px solid #fc4c00";
         buttonFR.style["padding-bottom"] = "0";
         buttonNL.style["border-bottom"] = "none";
@@ -214,8 +217,8 @@ window.onload = function () {
         buttonEN.style["padding-bottom"] = "3px";
     });
 
-    buttonEN.addEventListener('click', e => {
-        getLanguage('en');
+    buttonEN.addEventListener("click", (e) => {
+        getLanguage("en");
         buttonEN.style["border-bottom"] = "3px solid #fc4c00";
         buttonEN.style["padding-bottom"] = "0";
         buttonFR.style["border-bottom"] = "none";
@@ -223,9 +226,7 @@ window.onload = function () {
         buttonNL.style["border-bottom"] = "none";
         buttonNL.style["padding-bottom"] = "3px";
     });
-
-}
-
+};
 
 function showWelcomePopup() {
     const popup = document.getElementById("welcomePopup");
@@ -245,25 +246,28 @@ function showWelcomePopup() {
 function closeWelcomePopup() {
     const popup = document.getElementById("welcomePopup");
     popup.style.display = "none";
-    document.getElementById('homepage').style.display = "flex";
+    document.getElementById("homepage").style.display = "flex";
 }
 
 function closeHelpPopup() {
-    const popup = document.getElementById('helpPopup');
+    const popup = document.getElementById("helpPopup");
     popup.style.display = "none";
-    document.getElementById('helpOverlay').style.display = 'none';
+    document.getElementById("helpOverlay").style.display = "none";
 }
 
 function closePopups() {
-    const popupTexts = document.getElementsByClassName('popupText');
+    const popupContainer = document.getElementById("popupContainer");
+    popupContainer.classList.remove("fade-in");
+    popupContainer.classList.add("fade-out");
+
+    popupContainer.addEventListener("animationend", removeContent, true);
+
+    const popupTexts = document.getElementsByClassName("popupText");
     for (let text of popupTexts) {
         text.scrollTop = 0;
     }
 
-    document.getElementById('popupContainer').style.display = "none";
-    document.getElementById('popupOverlay').style.display = 'none';
-
-    const popupContents = document.getElementsByClassName('popupContent');
+    const popupContents = document.getElementsByClassName("popupContent");
     for (let content of popupContents) {
         content.style.display = "none";
     }
@@ -272,4 +276,9 @@ function closePopups() {
     guidoVideo.pause();
     guidoVideo.currentTime = 0;
     guidoVideo.load();
+}
+
+function removeContent() {
+    popupContainer.style.display = "none";
+    document.getElementById("popupOverlay").style.display = "none";
 }
